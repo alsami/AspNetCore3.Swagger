@@ -28,10 +28,10 @@ namespace AspNetCore3.Swagger
         {
             services.AddMvc(opt => opt.EnableEndpointRouting = false);
             
-            services.AddSwaggerGen(opt => opt.SwaggerDoc("Test swagger", new OpenApiInfo
+            services.AddSwaggerGen(opt => opt.SwaggerDoc("1.0.0", new OpenApiInfo
             {
                 Title = "Test Swagger",
-                Version = "v1"
+                Version = "1.0.0"
             }));
         }
 
@@ -47,7 +47,7 @@ namespace AspNetCore3.Swagger
 
             app.UseSwagger();
 
-            app.UseSwaggerUI(opt => opt.SwaggerEndpoint("/swagger/v1/swagger.json", "Test Swagger"));
+            app.UseSwaggerUI(opt => opt.SwaggerEndpoint("/swagger/1.0.0/swagger.json", "Test Swagger"));
 
             app.UseMvc();
         }
